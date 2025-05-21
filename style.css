@@ -1,0 +1,15 @@
+.card {
+    border: solid 2px rgba(0, 0, 0, 0.25) !important;
+}
+.card.produk:hover {
+    border: solid 2px rgba(0, 0, 255, 0.50) !important;
+}
+.list-group-item:hover {
+    border: solid 2px rgba(0, 0, 255, 0.50) !important;
+}
+.nav-link {
+    color: #000;
+}
+.nav-link:hover {
+    color: blue;
+}
