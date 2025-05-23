@@ -132,7 +132,7 @@ BEGIN
             ) THEN
                 -- Insert denda baru
                 INSERT INTO denda (detail_sewa_id, jenis_denda, jumlah_denda, keterangan)
-                VALUES (v_detail_sewa_id, 'terlambatan', v_total_denda, CONCAT('Terlambat ', v_hari_telat, ' hari'));
+                VALUES (v_detail_sewa_id, 'terlambat', v_total_denda, CONCAT('terlambat ', v_hari_telat, ' hari'));
             END IF;
         END IF;
 

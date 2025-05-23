@@ -20,7 +20,7 @@
                 alertDanger($result['data']);
             } else {
                 alertDanger('Ubah data gagal, silahkan cek form tadi!');
-                $errAdd = $result;
+                $errAdd = $result['data'];
             }
             
         } else {
@@ -63,6 +63,7 @@
             </div>
             <div class="card-body text-center">
                 <h5 class="card-title" id="hargaPerhari">Rp. <?= number_format($r['harga_sewa_perhari'], 0, ',', '.'); ?> / hari</h5>
+                <p class="card-title">Stok : <?= $r['stok']; ?></p>
             </div>
             <div class="card-footer">
                 <div class="accordion-item">
@@ -122,7 +123,23 @@
         </div>
     </div>
 </div>
-<p style="font-size: 30px; font-weight: 600;" class="mt-3">Kamera Lainnya</p>
+<div class="row">
+    <div class="col-6">
+        <p style="font-size: 30px; font-weight: 600;" class="mt-3">Kamera Lainnya</p>
+    </div>
+    <div class="col-6">
+        <form class="mt-3 d-none d-sm-inline-block form-inline navbar-search" style="width: 500px; margin-left: 40px;" action="" method="post">
+            <div class="input-group">
+                <input name="cari" type="text" class="form-control bg-light border-2 border-primary small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <button name="cariin" class="btn btn-primary" type="submit">
+                        <i class="fas fa-search fa-sm"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 <div class="row row-cols-4">
     <?php 
         if(mysqli_num_rows($getAllKamera) > 0) { 

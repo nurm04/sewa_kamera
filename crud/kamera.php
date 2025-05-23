@@ -15,12 +15,16 @@
             $errors['harga'] = "* Harga tidak boleh kosong.";
         } elseif (!preg_match("/^[0-9]+$/", $hargaFinal)) {
             $errors['harga'] = "* Harga tidak valid.";
+        } elseif (!is_numeric($hargaFinal) || $hargaFinal < 0) {
+            $errors['harga'] = "* Stok harus berupa angka positif.";
         }
 
         if (empty($stok)) {
             $errors['stok'] = "* Stok tidak boleh kosong.";
         } elseif (!preg_match("/^[0-9]+$/", $stok)) {
             $errors['stok'] = "* Stok tidak valid.";
+        } elseif (!ctype_digit($stok) || intval($stok) < 0) {
+            $errors['stok'] = "* Stok harus berupa angka positif.";
         }
         
         if (empty($gambar)) {
@@ -52,7 +56,7 @@
         if ($querylagi) {
             return true;
         } else {
-            return "Gagal menyimpan ke database.";
+            return false;
         }
     }
 

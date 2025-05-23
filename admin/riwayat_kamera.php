@@ -27,16 +27,6 @@
     <!-- Page Heading -->
     <div class="d-flex justify-content-between align-items-center mb-3 mt-1 flex-wrap">
         <h1 class="h3 text-gray-900 mb-0">Data Riwayat Kamera</h1>
-        <form class="form-inline my-2 my-md-0">
-            <div class="input-group">
-                <input type="text" class="form-control bg-light border-2 border-primary small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" style="width: 300px;">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit">
-                        <i class="fas fa-search fa-sm"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
     </div>
     <!-- Data Tales Example -->
     <div class="card shadow mb-4">

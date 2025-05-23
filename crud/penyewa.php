@@ -45,7 +45,18 @@
     }
 
     // Read
+    if (isset($_POST['cariin'])) {
+        $cari = $_POST['cari'];
+    }
     $qGetAllPenyewa = "SELECT * FROM penyewa";
+    if (!empty($cari)) {
+        $qGetAllPenyewa .= " WHERE
+        nama LIKE '%$cari%' OR 
+        no_tlp LIKE '%$cari%' OR 
+        email LIKE '%$cari%' OR 
+        password LIKE '%$cari%'
+        ";
+    }
     $getAllPenyewa = mysqli_query($koneksi, $qGetAllPenyewa);
 
     function cekLogin($email, $password) {

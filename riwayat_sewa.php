@@ -12,8 +12,8 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Tanggal Pinjam</th>
-                            <th>Tanggal Kembali</th>
+                            <th>Status Sewa</th>
+                            <th>Tanggal Sewa</th>
                             <th>Kamera</th>
                             <th>Status Denda</th>
                             <th class="text-center">...</th>
@@ -27,8 +27,8 @@
                         ?>
                         <tr>
                             <td><?= $key+1; ?></td>
-                            <td><?= $t['tanggal_pinjam']; ?></td>
-                            <td><?= $t['tanggal_kembali']; ?></td>
+                            <td><?= ($t['status'] == "disewa" && $t['jenis_denda'] == "terlambat" ? "Belum dikembalikan" : $t['status']); ?></td>
+                            <td><?= $t['tanggal_pinjam']; ?> / <?= $t['tanggal_kembali']; ?></td>
                             <td><?= $t['merk']; ?></td>
                             <td><?= $t['jenis_denda'] == null ? "Tidak Ada" : $t['jenis_denda']; ?></td>
                             <td>

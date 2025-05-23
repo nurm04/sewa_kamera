@@ -25,16 +25,6 @@
                     </div>
                     <div class="sidebar-brand-text fw-bold text-light">Sewa <span class="text-primary">Kamera</span></div>
                 </a>
-                <form class="d-none d-sm-inline-block form-inline navbar-search" style="width: 500px;" action="" method="post">
-                    <div class="input-group">
-                        <input name="cari" type="text" class="form-control bg-light border-2 border-primary small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button name="cariin" class="btn btn-primary" type="submit">
-                                <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
-                    </div>
-                </form>
                 <?php if (!isset($_SESSION['user'])) {?>
                     <div class="d-flex align-items-center gap-3">
                         <a class="nav-link text-light" href="signin.php">Sign In</a>

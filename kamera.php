@@ -13,7 +13,23 @@
         </div>
     </div>
     <div class="col-9">
-        <p style="font-size: 30px; font-weight: 600;" class="mt-3">Kamera</p>
+        <div class="row">
+            <div class="col-4">
+                <p style="font-size: 30px; font-weight: 600;" class="mt-3">Kamera</p>
+            </div>
+            <div class="col-6">
+                <form class="mt-3 d-none d-sm-inline-block form-inline navbar-search" style="width: 500px; margin-left: 40px;" action="" method="post">
+                    <div class="input-group">
+                        <input name="cari" type="text" class="form-control bg-light border-2 border-primary small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button name="cariin" class="btn btn-primary" type="submit">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
         <div class="row row-cols-3">
             <?php 
                 if(mysqli_num_rows($getAllKamera) > 0) { 

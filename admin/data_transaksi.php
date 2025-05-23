@@ -37,11 +37,11 @@
     <!-- Page Heading -->
     <div class="d-flex justify-content-between align-items-center mb-3 mt-1 flex-wrap">
         <h1 class="h3 text-gray-900 mb-0">Data Transaksi</h1>
-        <form class="form-inline my-2 my-md-0">
+        <form class="form-inline my-2 my-md-0" action="" method="post">
             <div class="input-group">
-                <input type="text" class="form-control bg-light border-2 border-primary small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" style="width: 300px;">
+                <input name="cari" type="text" class="form-control bg-light border-2 border-primary small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" style="width: 300px;">
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit">
+                    <button class="btn btn-primary" type="submit" name="cariin">
                         <i class="fas fa-search fa-sm"></i>
                     </button>
                 </div>

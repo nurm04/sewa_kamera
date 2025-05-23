@@ -35,8 +35,14 @@
         }
     
         if (!empty($errors)) {
-            return $errors;
+            return ["status" => null, "data" => $errors];
         }
+
+        $datakamera = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * FROM view_all_data_kamera"));
+        if ($jumlah > $datakamera['stok']) {
+            return ["status" => false, "data" => "Stok tidak cukup"];
+        }
+        
 
         $query = mysqli_query($koneksi, "CALL sp_simpan_transaksi('$penyewa_id', '$kamera_id', '$pinjam', '$kembali', '$jumlah', '$totalFinal', '$metode')");      
         if ($query) {
@@ -47,7 +53,34 @@
     }
 
     // Read
+    if (isset($_POST['cariin'])) {
+        $cari = $_POST['cari'];
+    }
     $qGetAllTransaksi = "SELECT * FROM view_all_data_transaksi";
+    if (!empty($cari)) {
+        $qGetAllTransaksi .= " WHERE
+        nama LIKE '%$cari%' OR 
+        no_tlp LIKE '%$cari%' OR 
+        email LIKE '%$cari%' OR 
+        password LIKE '%$cari%' OR
+
+        metode_pembayaran LIKE '%$cari%' OR
+        total LIKE '%$cari%' OR
+
+        tanggal_pinjam LIKE '%$cari%' OR
+        tanggal_kembali LIKE '%$cari%' OR
+        jumlah LIKE '%$cari%' OR
+        status LIKE '%$cari%' OR
+
+        jenis_denda LIKE '%$cari%' OR
+        jumlah_denda LIKE '%$cari%' OR
+        keterangan LIKE '%$cari%' OR
+
+        merk LIKE '%$cari%' OR
+        harga_sewa_perhari LIKE '%$cari%' OR
+        stok LIKE '%$cari%'
+        ";
+    }
     $getAllTransaksi = mysqli_query($koneksi, $qGetAllTransaksi);
     
     function getByIdUser($id) {
